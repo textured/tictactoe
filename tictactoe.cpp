@@ -60,6 +60,12 @@ void tictactoe::startGame()
 	{
 		tictactoe::printBoard();
 
+		if (turn == 9)
+		{
+			std::cout << "Tie! No one won.\n Thanks for playing.";
+			GAME = false;
+		}
+
 		std::cout << "Player " << currentPlayer << "'s turn:" << std::endl;
 		std::cin >> x;
 		std::cin >> y;
@@ -70,8 +76,6 @@ void tictactoe::startGame()
 		}
 		else
 		{
-			/* check to see if game is won */
-
 			if (tictactoe::checkVictory() == '.')
 			{
 				/* Change turn and increment count*/
@@ -79,12 +83,9 @@ void tictactoe::startGame()
 					currentPlayer = 'Y';
 				else
 					currentPlayer = 'X';
+
 				turn++;
 				std::cout << "TURN = " << turn << std::endl;
-			}
-			else if (turn == 8)
-			{
-				std::cout << "Tie! No one won.\n Thanks for playing.";
 			}
 			else
 			{
