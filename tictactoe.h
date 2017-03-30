@@ -8,7 +8,6 @@ public:
 	void startGame();
 private:
 	char checkVictory();
-	void checkMove(char currentPlayer);
 	bool placeObject(int x, int y, char currentPlayer);
 	void clearBoard();
 	void printBoard();
